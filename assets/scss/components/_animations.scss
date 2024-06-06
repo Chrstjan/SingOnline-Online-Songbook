@@ -3,3 +3,18 @@
     80% {top: 84.9%;}
     100% {top: 84%;}
 }
+
+@keyframes burgerTop {
+    0% {transform: translateY(0) rotate(0deg);}
+    100% {transform: translateY(13px) rotate(45deg);}
+}
+
+@keyframes burgerMiddle {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes burgerBottom {
+    0% {transform: translate(0) rotate(0deg);}
+    100% {transform: translateY(-13px) rotate(-45deg);}
+}

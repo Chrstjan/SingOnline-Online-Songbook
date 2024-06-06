@@ -1,0 +1,61 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+@use "../components/animations";
+
+.main-nav {
+        
+    .main-nav-menu {
+        display: none;
+    }
+
+    .main-nav-menu.show-menu {
+        z-index: 999;
+        animation: navbarDropdown 0.3s 1 forwards linear;
+        @include mixins.flexBox(column, center, center);
+        gap: 0.5rem;
+        background: variables.$main-header-background;
+        position: absolute;
+        top: 84%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100vw;
+
+        li {
+            list-style-type: none;
+
+            button {
+                @extend .btn-to-header;
+                
+                &:last-of-type {
+                    padding-bottom: 0.6rem;
+                }
+            }
+        }
+    }
+
+    #hamburger {
+        display: block;
+
+        .bar {
+            display: block;
+            margin: 7px 8px;
+            width: 25px;
+            height: 6px;
+            background: variables.$main-text-color-white;
+
+            &.burger-top {
+                animation: burgerTop 0.5s 1 forwards ease-in-out;
+            }
+                
+            &.burger-middle {
+                animation: burgerMiddle 0.5s 1 forwards ease-in-out;
+            }
+    
+            &.burger-bottom {
+                animation: burgerBottom 0.5s 1 forwards ease-in-out;
+            }
+        }
+    }
+}

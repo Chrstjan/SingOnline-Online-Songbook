@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-.btn-to-header, .main-footer .footer-navigation button, .main-header .main-nav .main-nav-menu.show-menu li button {
+.btn-to-header, .main-footer .footer-navigation button, .main-nav .main-nav-menu.show-menu li button {
   border: 0;
   background: transparent;
   color: #ffffff;
@@ -15,17 +15,6 @@
 @font-face {
   font-family: "header-font";
   src: url(../../../_FILES/fonts/Pacifico.ttf);
-}
-@keyframes navbarDropdown {
-  0% {
-    top: 70%;
-  }
-  80% {
-    top: 84.9%;
-  }
-  100% {
-    top: 84%;
-  }
 }
 .main-header {
   display: flex;
@@ -45,10 +34,46 @@
 .main-header .header-logo-container .singonline-logo {
   width: 10vw;
 }
-.main-header .main-nav .main-nav-menu {
+
+@keyframes navbarDropdown {
+  0% {
+    top: 70%;
+  }
+  80% {
+    top: 84.9%;
+  }
+  100% {
+    top: 84%;
+  }
+}
+@keyframes burgerTop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(13px) rotate(45deg);
+  }
+}
+@keyframes burgerMiddle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes burgerBottom {
+  0% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-13px) rotate(-45deg);
+  }
+}
+.main-nav .main-nav-menu {
   display: none;
 }
-.main-header .main-nav .main-nav-menu.show-menu {
+.main-nav .main-nav-menu.show-menu {
   z-index: 999;
   animation: navbarDropdown 0.3s 1 forwards linear;
   display: flex;
@@ -63,21 +88,30 @@
   transform: translate(-50%);
   width: 100vw;
 }
-.main-header .main-nav .main-nav-menu.show-menu li {
+.main-nav .main-nav-menu.show-menu li {
   list-style-type: none;
 }
-.main-header .main-nav .main-nav-menu.show-menu li button:last-of-type {
+.main-nav .main-nav-menu.show-menu li button:last-of-type {
   padding-bottom: 0.6rem;
 }
-.main-header .main-nav #hamburger {
+.main-nav #hamburger {
   display: block;
 }
-.main-header .main-nav #hamburger .bar {
+.main-nav #hamburger .bar {
   display: block;
   margin: 7px 8px;
   width: 25px;
   height: 6px;
   background: #ffffff;
+}
+.main-nav #hamburger .bar.burger-top {
+  animation: burgerTop 0.5s 1 forwards ease-in-out;
+}
+.main-nav #hamburger .bar.burger-middle {
+  animation: burgerMiddle 0.5s 1 forwards ease-in-out;
+}
+.main-nav #hamburger .bar.burger-bottom {
+  animation: burgerBottom 0.5s 1 forwards ease-in-out;
 }
 
 .landing-container {
