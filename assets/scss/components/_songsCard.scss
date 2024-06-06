@@ -9,6 +9,10 @@
         @include mixins.flexBox(column, center, center);
         img {
             width: 20vw;
+
+            @media (min-width: 1300px) {
+                width: 8vw;
+            }
         }
     }
 }

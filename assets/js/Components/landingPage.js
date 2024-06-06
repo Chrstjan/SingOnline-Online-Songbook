@@ -20,6 +20,10 @@ export const buildFeaturedSong = () => {
                         <h4>Artist Name</h4>
                     </hgroup>
                     <button class="song-star">&#9733;</button>
+                    <span class="album-container">
+                        <img src="./assets/img/ginger-man.jpg" alt="album image" />
+                        <h4>Album Name</h4>
+                    </span>
                 </header>
             </figure>
         </span>`;

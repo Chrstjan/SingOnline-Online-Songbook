@@ -6,10 +6,14 @@
 .landing-container {
     @include mixins.flexBox(column, start, center);
     position: relative;
-    @include mixins.background-image("../../../assets/media/SingOnline-Landing-Video.gif");
+    @include mixins.background-image("../../../assets/media/SingOnline-Landing-Video.gif", cover, center, no-repeat);
     height: 180vw; //Vil ikke virke med 100% 🤔🤔
-    width: 100vw;
+    width: 100%;
     backdrop-filter: blur(10px);
+
+    @media (min-width: 1300px) {
+        height: 49.2vw;
+    }
     
     header {
 
@@ -19,12 +23,20 @@
             filter: drop-shadow(9px 8px #00000099);
             text-shadow: 1px 1px 2px #00000088;
             margin: 0;
+
+            @media (min-width: 1300px) {
+                font-size: 3vw;
+            }
         }
 
         p {
             font-size: 19px;
             font-family: "Roboto", sans-serif;
             text-shadow: 3px 3px 2px #00000088;
+
+            @media (min-width: 1300px) {
+                font-size: 1.2vw;
+            }
         }
     }
 
@@ -35,6 +47,12 @@
             font-family: "Roboto", sans-serif;
             text-shadow: 5px 5px 5px #00000088;
             width: 160px;
+
+            @media (min-width: 1300px) {
+                font-size: 1vw;
+                width: 260px;
+                text-shadow: 1px 1px 1px #000000;
+            }
         }
 
         .btn-footer {

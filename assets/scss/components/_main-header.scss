@@ -8,6 +8,10 @@
     background: variables.$main-header-background;
     position: relative;
 
+    @media (min-width: 1300px) {
+        padding: 0rem 0.7rem;
+    }
+
     .header-logo-container {
         @include mixins.flexBox(row, center, center);
         padding-left: 0.4rem;
@@ -18,6 +22,10 @@
 
         .singonline-logo {
             width: 10vw;
+
+            @media (min-width: 1300px) {
+                width: 5vw;
+            }
         }
     }
 }

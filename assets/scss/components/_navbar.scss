@@ -8,6 +8,23 @@
         
     .main-nav-menu {
         display: none;
+
+        @media (min-width: 1300px) {
+            display: block;
+            @include mixins.flexBox(row, center, center);
+            gap: 0.5rem;
+
+            li {
+                list-style-type: none;
+            }
+
+            button {
+                border: 0;
+                background: transparent;
+                color: #fff;
+                font-size: 26px;
+            }
+        }
     }
 
     .main-nav-menu.show-menu {
@@ -37,6 +54,10 @@
 
     #hamburger {
         display: block;
+
+        @media (min-width: 1300px) {
+            display: none;
+        }
 
         .bar {
             display: block;
