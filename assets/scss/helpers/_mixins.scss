@@ -1,0 +1,28 @@
+@mixin flexBox($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin gridTemplateColumns($amount: 1, $space: 1fr) {
+    grid-template-columns: repeat($amount, $space fr);
+}
+
+@mixin gridTemplateRows($amount: 1, $space: 1fr) {
+    grid-template-rows: repeat($amount, $space fr);
+}
+
+@mixin background-image($image) {
+    background-image: url($image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin positionAbsolute($y, $x, $Yx: 50%, $Xy: 50%) {
+    position: absolute;
+    top: $y;
+    left: $x;
+    transform: translate(-$Yx, -Xy);
+}
