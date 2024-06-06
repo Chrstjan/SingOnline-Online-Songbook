@@ -6,7 +6,6 @@
 .landing-container {
     @include mixins.flexBox(column, start, center);
     position: relative;
-    color: variables.$main-text-color-white;
     @include mixins.background-image("../../../assets/media/SingOnline-Landing-Video.gif");
     height: 180vw; //Vil ikke virke med 100% 🤔🤔
     width: 100vw;

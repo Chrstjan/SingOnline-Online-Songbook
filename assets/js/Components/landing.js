@@ -1,5 +1,6 @@
 import { hideNavigation, showNavigation } from "./other/togglePageNavigation.js";
 import { clearApp } from "./app.js";
+import { buildFeaturedSong, buildPopularSongs } from "./landingPage.js";
 
 const app = document.getElementById("app");
 
@@ -35,6 +36,7 @@ export const landingView = () => {
 
         getStartedBtn.addEventListener("click", () => {
             showNavigation();
-            clearApp(app);
+            buildFeaturedSong();
+            buildPopularSongs();
         });
 }

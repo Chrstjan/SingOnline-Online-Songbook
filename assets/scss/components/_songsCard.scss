@@ -1,0 +1,14 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.songs-container {
+    @include mixins.flexBox(row, center, center);
+    .popular-song {
+        @include mixins.flexBox(column, center, center);
+        img {
+            width: 20vw;
+        }
+    }
+}

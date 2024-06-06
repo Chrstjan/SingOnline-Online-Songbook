@@ -1,0 +1,31 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.featured-song-container {
+    .featured-song {
+
+        @include mixins.flexBox(row, center, center);
+        gap: 0.6rem;
+
+        img {
+            width: 35vw;
+            border-radius: 4px;
+        }
+
+        header {
+            
+            hgroup {
+                h3, h4 {
+                    margin: 0;
+                    padding-bottom: 0.5rem;
+                }
+            }
+
+            button {
+                @extend .btn-to-header;
+            }
+        }
+    }
+}
