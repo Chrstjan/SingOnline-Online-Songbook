@@ -1,13 +1,13 @@
-import { clearApp } from '../Components/app.js';
+import { clearApp } from "../Components/app.js";
 
 const app = document.getElementById("app");
 const popSongsContainer = document.createElement("div");
 popSongsContainer.classList.add("popular-songs-container");
 
 export const buildFeaturedSong = () => {
-    clearApp(app);
+  clearApp(app);
 
-    let featuredSong = `
+  let featuredSong = `
         <span class="featured-song-container">
             <header>
                 <h2>Featured Song</h2>
@@ -28,26 +28,48 @@ export const buildFeaturedSong = () => {
             </figure>
         </span>`;
 
-        app.innerHTML += featuredSong;
-}
+  app.innerHTML += featuredSong;
+};
+
+//Only used as dummy data for the map loops in the build code!
+let dummyArr = ["Popular Songs", "Rock", "R&B", "Soul"];
+let dummySongNames = [
+  "Song One",
+  "Song Two",
+  "Song Three",
+  "Song Four",
+  "Song Five",
+  "Song Six",
+  "Song Seven",
+  "Song Eight",
+  "Song Nine",
+];
 
 export const buildPopularSongs = () => {
-    clearApp(popSongsContainer);
+  clearApp(popSongsContainer);
 
-    let containerHeader = `<header><h3>Popular Songs</h3></header>`
+  dummyArr.map((category) => {
+    let containerHeader = `<header><h3>${category}</h3></header>`;
+    popSongsContainer.innerHTML += containerHeader;
 
-    let popularSongs = `
-        <span class="songs-container">
+    let songsContainer = document.createElement("span");
+    songsContainer.classList.add("songs-container");
+
+    dummySongNames.map((song) => {
+      let popularSongs = `
             <figure class="popular-song">
                 <img src="./assets/img/ginger-man.jpg" alt="song picture"/>
                 <header>
-                    <h3>Song Name</h3>
+                    <h3>${song}</h3>
                     <h4>Song Artist</h4>
                 </header>
-            </figure>
-        </span>`;
-
-        popSongsContainer.innerHTML += containerHeader;
-        popSongsContainer.innerHTML += popularSongs;
-        app.appendChild(popSongsContainer);
-}
+                <figcaption class="song-list-btn-container">
+                    <button class="song-star">&#9733;</button>
+                </figcaption>
+            </figure>`;
+      songsContainer.innerHTML += popularSongs;
+    });
+    popSongsContainer.appendChild(songsContainer);
+    app.appendChild(popSongsContainer);
+  });
+};

@@ -45,6 +45,18 @@
   }
 }
 
+@-webkit-keyframes navbarDropdown {
+  0% {
+    top: 70%;
+  }
+  80% {
+    top: 84.9%;
+  }
+  100% {
+    top: 84%;
+  }
+}
+
 @keyframes navbarDropdown {
   0% {
     top: 70%;
@@ -56,6 +68,14 @@
     top: 84%;
   }
 }
+@-webkit-keyframes burgerTop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(13px) rotate(45deg);
+  }
+}
 @keyframes burgerTop {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -64,12 +84,28 @@
     transform: translateY(13px) rotate(45deg);
   }
 }
+@-webkit-keyframes burgerMiddle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes burgerMiddle {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes burgerBottom {
+  0% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-13px) rotate(-45deg);
   }
 }
 @keyframes burgerBottom {
@@ -104,7 +140,8 @@
 }
 .main-nav .main-nav-menu.show-menu {
   z-index: 999;
-  animation: navbarDropdown 0.3s 1 forwards linear;
+  -webkit-animation: navbarDropdown 0.3s 1 forwards linear;
+          animation: navbarDropdown 0.3s 1 forwards linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,13 +176,16 @@
   background: #ffffff;
 }
 .main-nav #hamburger .bar.burger-top {
-  animation: burgerTop 0.5s 1 forwards ease-in-out;
+  -webkit-animation: burgerTop 0.5s 1 forwards ease-in-out;
+          animation: burgerTop 0.5s 1 forwards ease-in-out;
 }
 .main-nav #hamburger .bar.burger-middle {
-  animation: burgerMiddle 0.5s 1 forwards ease-in-out;
+  -webkit-animation: burgerMiddle 0.5s 1 forwards ease-in-out;
+          animation: burgerMiddle 0.5s 1 forwards ease-in-out;
 }
 .main-nav #hamburger .bar.burger-bottom {
-  animation: burgerBottom 0.5s 1 forwards ease-in-out;
+  -webkit-animation: burgerBottom 0.5s 1 forwards ease-in-out;
+          animation: burgerBottom 0.5s 1 forwards ease-in-out;
 }
 
 .landing-container {
@@ -251,7 +291,8 @@
     width: 14vw;
   }
 }
-.featured-song-container .featured-song header hgroup h3, .featured-song-container .featured-song header hgroup h4 {
+.featured-song-container .featured-song header hgroup h3,
+.featured-song-container .featured-song header hgroup h4 {
   margin: 0;
   padding-bottom: 0.5rem;
 }
@@ -260,6 +301,10 @@
     position: absolute;
     left: 48%;
     top: 0;
+  }
+  .featured-song-container .featured-song header button:hover {
+    rotate: 20deg;
+    cursor: pointer;
   }
 }
 .featured-song-container .featured-song header .album-container {
@@ -277,11 +322,16 @@
   }
 }
 
+.popular-songs-container {
+  width: 100%;
+}
+
 .songs-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow: auto;
 }
 .songs-container .popular-song {
   display: flex;
@@ -289,12 +339,41 @@
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 1300px) {
+  .songs-container .popular-song {
+    position: relative;
+  }
+  .songs-container .popular-song:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+}
 .songs-container .popular-song img {
   width: 20vw;
 }
 @media (min-width: 1300px) {
   .songs-container .popular-song img {
     width: 8vw;
+  }
+}
+.songs-container .popular-song .song-list-btn-container {
+  display: none;
+}
+@media (min-width: 1300px) {
+  .songs-container .popular-song .song-list-btn-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 2%;
+  }
+  .songs-container .popular-song .song-list-btn-container .song-star {
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+  }
+  .songs-container .popular-song .song-list-btn-container .song-star:hover {
+    rotate: 20deg;
+    cursor: pointer;
   }
 }
 

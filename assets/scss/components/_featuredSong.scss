@@ -4,64 +4,66 @@
 @use "../helpers/mixins";
 
 .featured-song-container {
+  @media (min-width: 1300px) {
+    border-bottom: 2px solid #ffffff;
+  }
+  .featured-song {
+    @include mixins.flexBox(row, center, center);
+    gap: 0.6rem;
 
     @media (min-width: 1300px) {
-        border-bottom: 2px solid #ffffff;
+      position: relative;
+      background: #1c1c1c50;
+      padding: 0rem 0.5rem;
+      border-radius: 10px;
     }
-    .featured-song {
 
-        @include mixins.flexBox(row, center, center);
-        gap: 0.6rem;
+    img {
+      width: 35vw;
+      border-radius: 4px;
+
+      @media (min-width: 1300px) {
+        width: 14vw;
+      }
+    }
+
+    header {
+      hgroup {
+        h3,
+        h4 {
+          margin: 0;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      button {
+        @extend .btn-to-header;
 
         @media (min-width: 1300px) {
-            position: relative;
-            background: #1C1C1C50;
-            padding: 0rem 0.5rem;
-            border-radius: 10px;
+          position: absolute;
+          left: 48%;
+          top: 0;
+          &:hover {
+            rotate: 20deg;
+            cursor: pointer;
+          }
         }
+      }
 
-        img {
-            width: 35vw;
-            border-radius: 4px;
+      .album-container {
+        display: none;
 
-            @media (min-width: 1300px) {
-                width: 14vw;
-            }
+        @media (min-width: 1300px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.6rem;
+
+          img {
+            width: 6vw;
+          }
         }
-
-        header {
-            
-            hgroup {
-                h3, h4 {
-                    margin: 0;
-                    padding-bottom: 0.5rem;
-                }
-            }
-
-            button {
-                @extend .btn-to-header;
-
-                @media (min-width: 1300px) {
-                    position: absolute;
-                    left: 48%;
-                    top: 0;
-                }
-            }
-
-            .album-container {
-                display: none;
-
-                @media (min-width: 1300px) {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 0.6rem;
-
-                    img {
-                        width: 6vw;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }

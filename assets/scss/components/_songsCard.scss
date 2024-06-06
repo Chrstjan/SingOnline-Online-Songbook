@@ -3,16 +3,52 @@
 @use "../fonts/fonts";
 @use "../helpers/mixins";
 
-.songs-container {
-    @include mixins.flexBox(row, center, center);
-    .popular-song {
-        @include mixins.flexBox(column, center, center);
-        img {
-            width: 20vw;
+.popular-songs-container {
+  width: 100%;
+}
 
-            @media (min-width: 1300px) {
-                width: 8vw;
-            }
-        }
+.songs-container {
+  @include mixins.flexBox(row, flex-start, center);
+  overflow: auto;
+
+  .popular-song {
+    @include mixins.flexBox(column, center, center);
+
+    @media (min-width: 1300px) {
+      position: relative;
+      &:hover {
+        scale: 1.1;
+        cursor: pointer;
+      }
     }
+
+    img {
+      width: 20vw;
+
+      @media (min-width: 1300px) {
+        width: 8vw;
+      }
+    }
+
+    .song-list-btn-container {
+      display: none;
+      @media (min-width: 1300px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 2%;
+
+        .song-star {
+          border: 0;
+          background: transparent;
+          font-size: 30px;
+
+          &:hover {
+            rotate: 20deg;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
