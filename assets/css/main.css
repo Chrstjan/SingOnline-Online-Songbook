@@ -1,10 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.btn-to-header, .main-footer .footer-navigation button, .main-header .main-nav .main-nav-menu.show-menu li button {
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+@font-face {
+  font-family: "header-font";
+  src: url(../../../_FILES/fonts/Pacifico.ttf);
+}
+@keyframes navbarDropdown {
+  0% {
+    top: 70%;
+  }
+  80% {
+    top: 84.9%;
+  }
+  100% {
+    top: 84%;
+  }
+}
 .main-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background: #0B0B0B;
+  position: relative;
 }
 .main-header .header-logo-container {
   display: flex;
@@ -24,6 +47,26 @@
 .main-header .main-nav .main-nav-menu {
   display: none;
 }
+.main-header .main-nav .main-nav-menu.show-menu {
+  animation: navbarDropdown 0.3s 1 forwards linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0B0B0B;
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100vw;
+}
+.main-header .main-nav .main-nav-menu.show-menu li {
+  list-style-type: none;
+}
+.main-header .main-nav .main-nav-menu.show-menu li button:last-of-type {
+  padding-bottom: 0.6rem;
+}
 .main-header .main-nav #hamburger {
   display: block;
 }
@@ -35,10 +78,6 @@
   background: #ffffff;
 }
 
-@font-face {
-  font-family: "header-font";
-  src: url(../../../_FILES/fonts/Pacifico.ttf);
-}
 .main-footer {
   display: flex;
   flex-direction: column;
@@ -72,13 +111,6 @@
   padding-bottom: 0.5rem;
   font-family: "Roboto", sans-serif;
 }
-.main-footer .footer-navigation button {
-  border: 0;
-  background: transparent;
-  color: #ffffff;
-  font-size: 24px;
-}
-
 html {
   scroll-behavior: smooth;
   height: 100%;

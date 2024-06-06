@@ -1,9 +1,13 @@
 @use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
 @use "../helpers/mixins";
+@use "../components/animations";
 
 .main-header {
     @include mixins.flexBox(row, space-between, center);
     background: variables.$main-header-background;
+    position: relative;
 
     .header-logo-container {
         @include mixins.flexBox(row, center, center);
@@ -24,8 +28,30 @@
         
         .main-nav-menu {
             display: none;
-            // @include mixins.flexBox(column, center, center);
-            // gap: 0.5rem;
+        }
+
+        .main-nav-menu.show-menu {
+            animation: navbarDropdown 0.3s 1 forwards linear;
+            @include mixins.flexBox(column, center, center);
+            gap: 0.5rem;
+            background: variables.$main-header-background;
+            position: absolute;
+            top: 84%;
+            left: 50%;
+            transform: translate(-50%);
+            width: 100vw;
+
+            li {
+                list-style-type: none;
+
+                button {
+                    @extend .btn-to-header;
+                    
+                    &:last-of-type {
+                        padding-bottom: 0.6rem;
+                    }
+                }
+            }
         }
 
         #hamburger {

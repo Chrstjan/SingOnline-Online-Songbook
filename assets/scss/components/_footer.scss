@@ -1,6 +1,7 @@
 @use "../helpers/variables";
-@use "../helpers/mixins";
+@use "../helpers/extends";
 @use "../fonts/fonts";
+@use "../helpers/mixins";
 
 .main-footer {
     @include mixins.flexBox(column, center, center);
@@ -29,10 +30,7 @@
         font-family: "Roboto", sans-serif;
         
         button {
-            border: 0;
-            background: transparent;
-            color: variables.$main-text-color-white;
-            font-size: 24px;
+            @extend .btn-to-header;
         }
     }
 }
