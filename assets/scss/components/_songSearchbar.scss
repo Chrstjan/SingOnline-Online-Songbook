@@ -1,0 +1,32 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.song-container {
+  .search-container {
+    @include mixins.gridTemplateColumns(1);
+    border-bottom: 2px solid variables.$main-text-color-white;
+    padding-top: 0.8rem;
+
+    @media (min-width: 1300px) {
+      & {
+        padding-top: 6rem;
+        border: 0;
+        border-right: 2px solid variables.$main-text-color-white;
+      }
+    }
+
+    .song-search-bar {
+      border-radius: 9px;
+      background: variables.$song-search-input-background;
+      outline: none;
+      padding: 0.4rem 0.6rem;
+
+      &::placeholder {
+        text-align: left;
+        font-size: 19px;
+      }
+    }
+  }
+}

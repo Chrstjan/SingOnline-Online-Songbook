@@ -1,0 +1,44 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.song-container {
+  @media (min-width: 1300px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-result-container {
+    @include mixins.flexBox(column, center, center);
+
+    .searched-song {
+      position: relative;
+      img {
+        width: 40vw;
+        border-radius: 6px;
+      }
+
+      header {
+        h3,
+        h4 {
+          margin: 0;
+          padding: 0.3rem 0rem;
+        }
+      }
+
+      .star-btn-container {
+        .song-star {
+          @extend .btn-to-header;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .album-container {
+          display: none;
+        }
+      }
+    }
+  }
+}
