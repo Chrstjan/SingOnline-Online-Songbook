@@ -12,15 +12,38 @@
     <div class="main-container">
       <header class="main-header">
         <span class="header-logo-container">
-          <h1>SingOnline</h1>
-          <img src="./assets/img/svg/SingOnline-header-logo.svg" alt="SingOnline logo">
+          <h1 id="home">SingOnline</h1>
+          <img class="singonline-logo" src="./assets/img/svg/SingOnline-header-logo.svg" alt="SingOnline logo">
         </span>
-        <nav class="main-nav"></nav>
+        <nav class="main-nav">
+          <ul class="main-nav-menu">
+            <li id="home-btn"><button>Home</button></li>
+            <li id="songs"><button>Songs</button></li>
+            <li id="artists"><button>Artists</button></li>
+            <li id="login"><button>Login</button></li>
+          </ul>
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
       </header>
       <main>
-        <section id="app"></section>
+        <section id="app">
+          
+        </section>
       </main>
-      <footer class="main-footer"></footer>
+      <footer class="main-footer">
+        <header class="name-header">
+          <h2>SingOnline</h2>
+          <p>-The best songs in the world</p>
+        </header>
+        <hgroup class="footer-navigation">
+          <button id="footer-home">Home</button>
+          <button id="profile">Profile</button>
+        </hgroup>
+      </footer>
     </div>
   </body>
 </html>

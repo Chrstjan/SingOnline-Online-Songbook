@@ -1,0 +1,43 @@
+@use "../helpers/variables";
+@use "../helpers/mixins";
+
+.main-header {
+    @include mixins.flexBox(row, space-between, center);
+    background: variables.$main-header-background;
+
+    .header-logo-container {
+        @include mixins.flexBox(row, center, center);
+        padding-left: 0.4rem;
+
+        #home {
+            color: variables.$main-text-color-white;
+            font-family: "header-font", sans-serif;
+            font-weight: 500;
+        }
+
+        .singonline-logo {
+            width: 10vw;
+        }
+    }
+
+    .main-nav {
+        
+        .main-nav-menu {
+            display: none;
+            // @include mixins.flexBox(column, center, center);
+            // gap: 0.5rem;
+        }
+
+        #hamburger {
+            display: block;
+
+            .bar {
+                display: block;
+                margin: 7px 8px;
+                width: 25px;
+                height: 6px;
+                background: variables.$main-text-color-white;
+            }
+        }
+    }
+}

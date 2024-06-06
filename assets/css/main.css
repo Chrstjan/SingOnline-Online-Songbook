@@ -1,10 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #0B0B0B;
+}
+.main-header .header-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.4rem;
+}
+.main-header .header-logo-container #home {
+  color: #ffffff;
+  font-family: "header-font", sans-serif;
+  font-weight: 500;
+}
+.main-header .header-logo-container .singonline-logo {
+  width: 10vw;
+}
+.main-header .main-nav .main-nav-menu {
+  display: none;
+}
+.main-header .main-nav #hamburger {
+  display: block;
+}
+.main-header .main-nav #hamburger .bar {
+  display: block;
+  margin: 7px 8px;
+  width: 25px;
+  height: 6px;
+  background: #ffffff;
+}
+
+@font-face {
+  font-family: "header-font";
+  src: url(../../../_FILES/fonts/Pacifico.ttf);
+}
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  color: #ffffff;
+  background: #0B0B0B;
+}
+.main-footer .name-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Roboto", sans-serif;
+}
+.main-footer .name-header h2 {
+  font-family: "header-font", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+}
+.main-footer .footer-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}
+.main-footer .footer-navigation button {
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+}
+
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .main-container {

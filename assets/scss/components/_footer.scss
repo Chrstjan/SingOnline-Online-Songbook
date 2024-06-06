@@ -1,0 +1,38 @@
+@use "../helpers/variables";
+@use "../helpers/mixins";
+@use "../fonts/fonts";
+
+.main-footer {
+    @include mixins.flexBox(column, center, center);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    color: variables.$main-text-color-white;
+    background: variables.$main-header-background;
+
+    .name-header {
+        @include mixins.flexBox(row, center, center);
+        gap: 0.4rem;
+        font-family: "Roboto", sans-serif;
+
+        h2 {
+            font-family: "header-font", sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+        }
+    }
+
+    .footer-navigation {
+        @include mixins.flexBox(row, space-around, center);
+        gap: 3rem;
+        padding-bottom: 0.5rem;
+        font-family: "Roboto", sans-serif;
+        
+        button {
+            border: 0;
+            background: transparent;
+            color: variables.$main-text-color-white;
+            font-size: 24px;
+        }
+    }
+}
