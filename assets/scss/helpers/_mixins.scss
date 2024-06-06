@@ -13,11 +13,11 @@
     grid-template-rows: repeat($amount, $space fr);
 }
 
-@mixin background-image($image) {
-    background-image: url($image);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@mixin background-image($url, $size: cover, $position: center, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
 }
 
 @mixin positionAbsolute($y, $x, $Yx: 50%, $Xy: 50%) {

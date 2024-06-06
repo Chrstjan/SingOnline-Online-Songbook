@@ -6,6 +6,12 @@
   font-size: 25px;
 }
 
+.singOnline-header, .main-footer .name-header h2, .landing-container header h2, .main-header .header-logo-container #home {
+  color: #ffffff;
+  font-family: "header-font", sans-serif;
+  font-weight: 500;
+}
+
 @font-face {
   font-family: "header-font";
   src: url(../../../_FILES/fonts/Pacifico.ttf);
@@ -35,11 +41,6 @@
   justify-content: center;
   align-items: center;
   padding-left: 0.4rem;
-}
-.main-header .header-logo-container #home {
-  color: #ffffff;
-  font-family: "header-font", sans-serif;
-  font-weight: 500;
 }
 .main-header .header-logo-container .singonline-logo {
   width: 10vw;
@@ -78,6 +79,59 @@
   background: #ffffff;
 }
 
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  background-image: url("../../../assets/media/SingOnline-Landing-Video.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 114vw;
+  width: 100vw;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.landing-container header h2 {
+  font-size: 34px;
+  filter: drop-shadow(9px 8px rgba(0, 0, 0, 0.6));
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5333333333);
+  margin: 0;
+}
+.landing-container header p {
+  font-size: 19px;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5333333333);
+}
+.landing-container .landing-content p {
+  font-size: 19px;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5333333333);
+  width: 150px;
+}
+.landing-container .landing-content .btn-footer {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.landing-container .landing-content .btn-footer .get-started-btn {
+  background: #61853D;
+  border: 0;
+  border: 3px solid #1A1919;
+  color: #ffffff;
+  padding: 1.1rem 1.5rem;
+  border-radius: 50px;
+  font-size: 18px;
+}
+.landing-container .landing-content .btn-footer .get-started-btn:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
 .main-footer {
   display: flex;
   flex-direction: column;
@@ -98,8 +152,6 @@
   font-family: "Roboto", sans-serif;
 }
 .main-footer .name-header h2 {
-  font-family: "header-font", sans-serif;
-  font-weight: 500;
   font-size: 30px;
 }
 .main-footer .footer-navigation {
@@ -126,4 +178,13 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif, Arial, Helvetica;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }

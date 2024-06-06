@@ -17,8 +17,7 @@
         font-family: "Roboto", sans-serif;
 
         h2 {
-            font-family: "header-font", sans-serif;
-            font-weight: 500;
+            @extend .singOnline-header;
             font-size: 30px;
         }
     }

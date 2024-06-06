@@ -1,0 +1,63 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.landing-container {
+    @include mixins.flexBox(column, start, center);
+    position: relative;
+    color: variables.$main-text-color-white;
+    @include mixins.background-image("../../../assets/media/SingOnline-Landing-Video.gif");
+    height: 114vw; //Vil ikke virke med 100% 🤔🤔
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    
+    header {
+
+        h2 {
+            @extend .singOnline-header;
+            font-size: 34px;
+            filter: drop-shadow(9px 8px #00000099);
+            text-shadow: 1px 1px 2px #00000088;
+            margin: 0;
+        }
+
+        p {
+            font-size: 19px;
+            font-family: "Roboto", sans-serif;
+            text-shadow: 3px 3px 2px #00000088;
+        }
+    }
+
+    .landing-content {
+
+        p {
+            font-size: 19px;
+            font-family: "Roboto", sans-serif;
+            text-shadow: 5px 5px 5px #00000088;
+            width: 150px;
+        }
+
+        .btn-footer {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translate(-50%);
+
+            .get-started-btn {
+                background: variables.$get-started-btn-background;
+                border: 0;
+                border: 3px solid #1A1919;
+                color: variables.$main-text-color-white;
+                padding: 1.1rem 1.5rem;
+                border-radius: 50px;
+                font-size: 18px;
+
+                &:hover {
+                    scale: 1.1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
