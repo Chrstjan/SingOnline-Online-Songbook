@@ -8,7 +8,7 @@
     position: relative;
     color: variables.$main-text-color-white;
     @include mixins.background-image("../../../assets/media/SingOnline-Landing-Video.gif");
-    height: 114vw; //Vil ikke virke med 100% 🤔🤔
+    height: 180vw; //Vil ikke virke med 100% 🤔🤔
     width: 100vw;
     backdrop-filter: blur(10px);
     
@@ -35,12 +35,12 @@
             font-size: 19px;
             font-family: "Roboto", sans-serif;
             text-shadow: 5px 5px 5px #00000088;
-            width: 150px;
+            width: 160px;
         }
 
         .btn-footer {
             position: absolute;
-            bottom: 15%;
+            bottom: 12%;
             left: 50%;
             transform: translate(-50%);
 

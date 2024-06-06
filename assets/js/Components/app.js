@@ -5,5 +5,5 @@ export const initPage = () => {
 }
 
 export const clearApp = (container) => {
-    container.innerHtml = "";
+    container.innerHTML = "";
 }

@@ -49,6 +49,7 @@
   display: none;
 }
 .main-header .main-nav .main-nav-menu.show-menu {
+  z-index: 999;
   animation: navbarDropdown 0.3s 1 forwards linear;
   display: flex;
   flex-direction: column;
@@ -90,7 +91,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 114vw;
+  height: 180vw;
   width: 100vw;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -110,11 +111,11 @@
   font-size: 19px;
   font-family: "Roboto", sans-serif;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5333333333);
-  width: 150px;
+  width: 160px;
 }
 .landing-container .landing-content .btn-footer {
   position: absolute;
-  bottom: 15%;
+  bottom: 12%;
   left: 50%;
   transform: translate(-50%);
 }
