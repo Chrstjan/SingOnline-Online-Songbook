@@ -10,13 +10,29 @@
   }
 
   .search-result-container {
+    padding-left: 0.5rem;
     @include mixins.flexBox(column, center, center);
+    gap: 1rem;
 
     .searched-song {
       position: relative;
+
+      @media (min-width: 1300px) {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        background: #1c1c1c70;
+      }
       img {
         width: 40vw;
         border-radius: 6px;
+
+        @media (min-width: 1300px) {
+          width: 15vw;
+        }
       }
 
       header {
@@ -25,18 +41,53 @@
           margin: 0;
           padding: 0.3rem 0rem;
         }
+
+        @media (min-width: 1300px) {
+          h3 {
+            font-size: 25px;
+          }
+        }
       }
 
       .star-btn-container {
+        @media (min-width: 1300px) {
+          & {
+            // position: relative;
+          }
+        }
+
         .song-star {
           @extend .btn-to-header;
           position: absolute;
           top: 0;
           right: 0;
+
+          @media (min-width: 1300px) {
+            right: 7vw;
+          }
         }
 
         .album-container {
           display: none;
+
+          @media (min-width: 1300px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            position: absolute; //flex would not work
+            right: -4vw;
+            bottom: 0;
+
+          & {
+            img {
+              display: block;
+              width: 5vw;
+            } 
+          }
+            
+          }
         }
       }
     }
