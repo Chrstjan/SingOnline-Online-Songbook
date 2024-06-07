@@ -1,4 +1,5 @@
 import { clearApp } from "./app.js";
+import { buildSongDetails } from "./buildSongDetails.js";
 
 const app = document.getElementById("app");
 const songContainer = document.createElement("div");
@@ -49,7 +50,7 @@ export const buildSearchResult = () => {
   dummySearchResult.map((song) => {
     let searchedSong = `
         <figure class="searched-song">
-            <img src="./assets/img/ginger-man.jpg" alt="searched song image" />
+            <img class="image-song" src="./assets/img/ginger-man.jpg" alt="searched song image" />
             <header>
                 <h3>${song.song_name}</h3>
                 <h4>${song.artist_name}</h4>
@@ -69,4 +70,11 @@ export const buildSearchResult = () => {
   songContainer.innerHTML += searchContainer;
   songContainer.appendChild(serachResultContainer);
   app.appendChild(songContainer);
+
+  const imageSong = document.querySelectorAll(".image-song");
+  imageSong.forEach((img) => {
+    img.addEventListener("click", () => {
+      buildSongDetails();
+    })
+  })
 };

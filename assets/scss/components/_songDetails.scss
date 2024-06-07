@@ -1,0 +1,133 @@
+@use "../helpers/variables";
+@use "../helpers/extends";
+@use "../fonts/fonts";
+@use "../helpers/mixins";
+
+.song-details-container {
+    width: 100%;
+    background: variables.$song-details-linear-background-color;
+
+    .dot-container {
+        display: block;
+
+        @media (min-width: 1300px) {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .dot {
+            display: block;
+            margin: 6px 2px;
+            width: 12px;
+            height: 8px;
+            border-radius: 100%;
+            background: variables.$main-text-color-white;
+        }
+    }
+
+    .song-detail-top {
+        @include mixins.flexBox(row, center, flex-start);
+        gap: 0.7rem;
+        padding-top: 0.6rem;
+
+        .song-image-container {
+            @media (min-width: 1300px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 0.7rem;
+            }
+
+            img {
+                width: 24vw;
+
+                @media (min-width: 1300px) {
+                    width: 11vw;
+                }
+            }
+
+            header {
+
+                @media (min-width: 1300px) {
+                    .song-album {
+                        display: none;
+                    }
+                }
+
+                h2 {
+                    margin: 0;
+                }
+
+                .song-artist {
+                    &:hover {
+                        cursor: pointer;
+                        scale: 1.1;
+                    }
+                }
+
+            }
+
+            .album-container {
+                display: none;
+
+                @media (min-width: 1300px) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.6rem;
+
+                    img {
+                        width: 4vw;
+                    }
+
+                    h3 {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .song-btns-container {
+            @include mixins.flexBox(column, center, center);
+            gap: 0.6rem;
+
+            button {
+                @extend .btn-to-header;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .close-song-btn {
+                &:hover {
+                    scale: 1.2;
+                }
+            }
+
+            .song-star {
+                &:hover {
+                    rotate: (-35deg);
+                }
+            }
+        }
+    }
+
+    .song-lyrics-container {
+        @include mixins.flexBox(column, center, center);
+
+        p {
+            width: 200px;
+            text-shadow: 2px 2px #000000;
+
+            @media (min-width: 1300px) {
+                font-size: 19px;
+            }
+        }
+    }
+}
