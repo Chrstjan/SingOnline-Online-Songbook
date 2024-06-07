@@ -1,0 +1,110 @@
+import { clearApp } from "./app.js";
+
+const app = document.getElementById("app");
+const artistContainer = document.createElement("div");
+artistContainer.classList.add("artist-container");
+
+const dummyAlbumsArr = [
+    {
+        image: "./assets/img/ginger-man.jpg",
+        album_name: "Joe & the Banjos",
+        album_description: "Joe rocks the world with his banjo",
+        songs_in_track: [
+            {
+                song_name: "Summer Banjo",
+                song_name: "Shape of my banjo"
+            }
+        ]
+    },
+    {
+        image: "./assets/img/ginger-man.jpg",
+        album_name: "Joe & the Banjos",
+        album_description: "Joe rocks the world with his banjo",
+        songs_in_track: [
+            {
+                song_name: "Summer Banjo",
+                song_name: "Shape of my banjo"
+            }
+        ]
+    },
+    {
+        image: "./assets/img/ginger-man.jpg",
+        album_name: "Joe & the Banjos",
+        album_description: "Joe rocks the world with his banjo",
+        songs_in_track: [
+            {
+                song_name: "Summer Banjo",
+                song_name: "Shape of my banjo"
+            }
+        ]
+    },
+    {
+        image: "./assets/img/ginger-man.jpg",
+        album_name: "Joe & the Banjos",
+        album_description: "Joe rocks the world with his banjo",
+        songs_in_track: [
+            {
+                song_name: "Summer Banjo",
+                song_name: "Shape of my banjo"
+            }
+        ]
+    }
+]
+
+export const buildArtistView = () => {
+    clearApp(app);
+    clearApp(artistContainer);
+
+    let artistHeader = `<header class="artist-header">
+                <h3>Artist: Banjo Joe</h3>
+            </header>`;
+    artistContainer.innerHTML += artistHeader;
+
+    let artistContainerContent = `
+        <figure class="artist-info-container">
+            <img src="./assets/img/ginger-man.jpg" alt="Picture of the artist" />
+            <figcaption>
+                <p>
+                    Banjo Joe is a charismatic and talented musician known for his mastery of the banjo. 
+                </p>
+            </figcaption>
+        </figure>`;
+
+    artistContainer.innerHTML += artistContainerContent;
+
+    let artistAlbums = document.createElement("span");
+    artistAlbums.classList.add("albums-container");
+
+    let albumsHeader = `
+        <header class="album-header">
+            <h2>Albums:</h2>
+        </header>`;
+
+    artistAlbums.innerHTML += albumsHeader;
+
+    dummyAlbumsArr.map((album) => {
+        let albums = `
+        <figure class="albums-container-figure">
+            <img src="${album.image}" alt="Album image" />
+            <header class="album-header-info">
+                <hgroup>
+                    <h3>${album.album_name}</h3>
+                    <h4>${album.album_description}</h4>
+                </hgroup>
+            </header>
+            <figcaption>
+               <header class="tracks-header">
+                <h2>Tracks:</h2>
+               </header> 
+               <p>
+                ${album.songs_in_track}
+               </p>
+            </figcaption>
+        </figure>`
+
+        artistAlbums.innerHTML += albums;
+    });
+
+    artistContainer.appendChild(artistAlbums);
+    app.appendChild(artistContainer);
+}

@@ -1,3 +1,4 @@
+import { buildArtists } from "../buildArtists.js";
 import { buildSearchResult } from "../buildSearchedSongs.js";
 import { buildFeaturedSong, buildPopularSongs } from "../landingPage.js";
 
@@ -20,6 +21,10 @@ export const pageNavigation = () => {
   });
 
   const artistsBtn = document.getElementById("artists");
+  artistsBtn.addEventListener("click", () => {
+    buildArtists();
+  });
+
   const loginBtn = document.getElementById("login");
 
   const footerHomeBtn = document.getElementById("footer-home");
