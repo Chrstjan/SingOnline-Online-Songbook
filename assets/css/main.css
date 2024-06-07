@@ -36,6 +36,10 @@
   align-items: center;
   padding-left: 0.4rem;
 }
+.main-header .header-logo-container #home:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
 .main-header .header-logo-container .singonline-logo {
   width: 10vw;
 }
@@ -100,6 +104,10 @@
     background: transparent;
     color: #fff;
     font-size: 26px;
+  }
+  .main-nav .main-nav-menu button:hover {
+    cursor: pointer;
+    scale: 1.2;
   }
 }
 .main-nav .main-nav-menu.show-menu {
@@ -245,6 +253,9 @@
 .featured-song-container .featured-song img {
   width: 35vw;
   border-radius: 4px;
+}
+.featured-song-container .featured-song img:hover {
+  cursor: pointer;
 }
 @media (min-width: 1300px) {
   .featured-song-container .featured-song img {
@@ -395,6 +406,9 @@
 .song-container .search-result-container .searched-song img {
   width: 40vw;
   border-radius: 6px;
+}
+.song-container .search-result-container .searched-song img:hover {
+  cursor: pointer;
 }
 @media (min-width: 1300px) {
   .song-container .search-result-container .searched-song img {

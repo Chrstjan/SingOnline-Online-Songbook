@@ -23,6 +23,11 @@
                 background: transparent;
                 color: #fff;
                 font-size: 26px;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.2;
+                }
             }
         }
     }

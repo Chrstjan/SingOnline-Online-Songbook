@@ -27,7 +27,8 @@ let dummySearchResult = [
 
 export const buildSearchResult = () => {
   clearApp(app);
-
+  clearApp(songContainer);
+  
   let searchContainer = `
     <div class="search-container">
         <input class="song-search-bar" type="text" placeholder="Search" />

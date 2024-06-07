@@ -18,6 +18,11 @@
 
         #home {
             @extend .singOnline-header;
+
+            &:hover {
+                scale: 1.2;
+                cursor: pointer;
+            }
         }
 
         .singonline-logo {

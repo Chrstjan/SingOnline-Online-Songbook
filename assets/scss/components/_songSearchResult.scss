@@ -30,6 +30,10 @@
         width: 40vw;
         border-radius: 6px;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         @media (min-width: 1300px) {
           width: 15vw;
         }

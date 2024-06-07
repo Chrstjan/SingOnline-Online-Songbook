@@ -1,4 +1,5 @@
 import { clearApp } from "../Components/app.js";
+import { buildSongDetails } from "./buildSongDetails.js";
 
 const app = document.getElementById("app");
 const popSongsContainer = document.createElement("div");
@@ -13,7 +14,7 @@ export const buildFeaturedSong = () => {
                 <h2>Featured Song</h2>
             </header>
             <figure class="featured-song">
-                <img src="./assets/img/ginger-man.jpg" alt="featured song image" />
+                <img class="featured-song-img" src="./assets/img/ginger-man.jpg" alt="featured song image" />
                 <header class="featured-header">
                     <hgroup>
                         <h3>Song Name</h3>
@@ -29,6 +30,11 @@ export const buildFeaturedSong = () => {
         </span>`;
 
   app.innerHTML += featuredSong;
+
+  const featuredBtn = document.querySelector(".featured-song-img");
+  featuredBtn.addEventListener("click", () => {
+    buildSongDetails();
+  });
 };
 
 //Only used as dummy data for the map loops in the build code!
@@ -58,7 +64,7 @@ export const buildPopularSongs = () => {
     dummySongNames.map((song) => {
       let popularSongs = `
             <figure class="popular-song">
-                <img src="./assets/img/ginger-man.jpg" alt="song picture"/>
+                <img class="song-cards-img" src="./assets/img/ginger-man.jpg" alt="song picture"/>
                 <header>
                     <h3>${song}</h3>
                     <h4>Song Artist</h4>
@@ -71,5 +77,12 @@ export const buildPopularSongs = () => {
     });
     popSongsContainer.appendChild(songsContainer);
     app.appendChild(popSongsContainer);
+
+    const songCardsBtn = document.querySelectorAll(".song-cards-img");
+    songCardsBtn.forEach((card) => {
+      card.addEventListener("click", () => {
+        buildSongDetails();
+      });
+    });
   });
 };

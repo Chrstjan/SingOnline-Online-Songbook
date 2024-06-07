@@ -2,6 +2,12 @@ import { buildSearchResult } from "../buildSearchedSongs.js";
 import { buildFeaturedSong, buildPopularSongs } from "../landingPage.js";
 
 export const pageNavigation = () => {
+  const headerLogoText = document.getElementById("home");
+  headerLogoText.addEventListener("click", () => {
+    buildFeaturedSong();
+    buildPopularSongs();
+  })
+
   const headerHomeBtn = document.getElementById("home-btn");
   headerHomeBtn.addEventListener("click", () => {
     buildFeaturedSong();
