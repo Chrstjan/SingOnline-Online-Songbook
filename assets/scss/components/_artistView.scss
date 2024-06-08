@@ -4,36 +4,114 @@
 @use "../helpers/mixins";
 
 .artist-container {
-    @include mixins.flexBox(column, flex-start, center);
+  @include mixins.flexBox(column, flex-start, center);
 
-    .artist-info-container {
-        @include mixins.flexBox(row, center, center);
-        gap: 0.5rem;
+  @media (min-width: 1300px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-        img {
-            width: 45vw;
-        }
+  .artist-info-container {
+    @include mixins.flexBox(column, center, center);
+    gap: 0.5rem;
+
+    @media (min-width: 1300px) {
+      justify-content: flex-start;
+      border-right: 2px solid #fff;
+      height: 84%;
+      padding-right: 0.4rem;
+      .artist-header {
+        display: none;
+      }
     }
 
-    .albums-container {
+    img {
+      width: 45vw;
 
-        .albums-container-figure {
-
-            .album-header-info {
-
-                hgroup {
-                    @include mixins.flexBox(column, center, center);
-
-                    h3, h4 {
-                        margin: 0;
-                        padding: 0.3rem 0rem;
-                    }
-                }
-            }
-
-            img {
-                width: 20vw;
-            }
-        }
+      @media (min-width: 1300px) {
+        width: 20vw;
+      }
     }
+
+    .desktop-artist-header {
+      display: none;
+
+      @media (min-width: 1300px) {
+        display: block;
+      }
+    }
+  }
+
+  .albums-container {
+    @include mixins.flexBox(column, center, center);
+    @media (min-width: 1300px) {
+      flex-direction: column;
+    }
+
+    .albums-container-figure {
+      @include mixins.flexBox(column, center, center);
+
+      @media (min-width: 1300px) {
+        background: #1c1c1c50;
+        padding: 0.6rem;
+      }
+
+      .album-header-info {
+        @include mixins.flexBox(column, center, center);
+
+        @media (min-width: 1300px) {
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+
+        hgroup {
+          @include mixins.flexBox(column, center, center);
+
+          @media (min-width: 1300px) {
+            align-items: flex-start;
+          }
+
+          h3,
+          h4 {
+            margin: 0;
+            padding: 0.3rem 0rem;
+          }
+        }
+      }
+
+      img {
+        width: 20vw;
+
+        @media (min-width: 1300px) {
+          width: 5vw;
+        }
+      }
+
+      figcaption {
+        @include mixins.flexBox(column, center, center);
+
+        .album-tracks {
+          margin: 0;
+          padding: 0;
+          @include mixins.flexBox(column, center, center);
+          gap: 1rem;
+
+          li {
+            list-style-type: none;
+
+            button {
+              @extend .btn-to-header;
+              font-size: 16px;
+
+              @media (min-width: 1300px) {
+                font-size: 20px;
+                cursor: pointer;
+                scale: 1.2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
