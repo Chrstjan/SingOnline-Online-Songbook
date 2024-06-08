@@ -1,5 +1,5 @@
 import { buildArtists } from "../buildArtists.js";
-import { buildSearchResult } from "../buildSearchedSongs.js";
+import { buildSearchResult } from "../songs/buildSearchedSongs.js";
 import { buildFeaturedSong, buildPopularSongs } from "../landingPage.js";
 
 export const pageNavigation = () => {
@@ -7,7 +7,7 @@ export const pageNavigation = () => {
   headerLogoText.addEventListener("click", () => {
     buildFeaturedSong();
     buildPopularSongs();
-  })
+  });
 
   const headerHomeBtn = document.getElementById("home-btn");
   headerHomeBtn.addEventListener("click", () => {

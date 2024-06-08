@@ -1,4 +1,4 @@
-import { clearApp } from "./app.js";
+import { clearApp } from "../app.js";
 import { buildSongDetails } from "./buildSongDetails.js";
 
 const app = document.getElementById("app");
@@ -28,7 +28,7 @@ let dummySearchResult = [
 export const buildSearchResult = () => {
   clearApp(app);
   clearApp(songContainer);
-  
+
   let searchContainer = `
     <div class="search-container">
         <input class="song-search-bar" type="text" placeholder="Search" />
@@ -76,6 +76,6 @@ export const buildSearchResult = () => {
   imageSong.forEach((img) => {
     img.addEventListener("click", () => {
       buildSongDetails();
-    })
-  })
+    });
+  });
 };

@@ -1,5 +1,5 @@
 import { clearApp } from "./app.js";
-import { buildSongDetails } from "./buildSongDetails.js";
+import { buildSongDetails } from "./songs/buildSongDetails.js";
 
 const app = document.getElementById("app");
 const artistContainer = document.createElement("div");

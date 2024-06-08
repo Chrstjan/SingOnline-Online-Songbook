@@ -1,4 +1,4 @@
-import { clearApp } from "./app.js";
+import { clearApp } from "../app.js";
 import { buildSearchResult } from "./buildSearchedSongs.js";
 
 const app = document.getElementById("app");
@@ -6,10 +6,10 @@ const songDetailContainer = document.createElement("div");
 songDetailContainer.classList.add("song-details-container");
 
 export const buildSongDetails = () => {
-    clearApp(app);
-    clearApp(songDetailContainer);
+  clearApp(app);
+  clearApp(songDetailContainer);
 
-    let songInfo = `
+  let songInfo = `
         <span class="song-detail-top">
             <div class="dot-container">
                 <span class="dot"></span>
@@ -34,7 +34,7 @@ export const buildSongDetails = () => {
             </div>
         </span>`;
 
-        let songLyrics = `
+  let songLyrics = `
             <article class="song-lyrics-container">
                 <p class="verse-one">
                     (Verse 1)
@@ -59,12 +59,12 @@ export const buildSongDetails = () => {
                 </p>
             </article>`;
 
-        songDetailContainer.innerHTML += songInfo;
-        songDetailContainer.innerHTML += songLyrics;
-        app.appendChild(songDetailContainer);
+  songDetailContainer.innerHTML += songInfo;
+  songDetailContainer.innerHTML += songLyrics;
+  app.appendChild(songDetailContainer);
 
-        const closeBtn = document.querySelector(".close-song-btn");
-        closeBtn.addEventListener("click", () => {
-            buildSearchResult();
-        });
-}
+  const closeBtn = document.querySelector(".close-song-btn");
+  closeBtn.addEventListener("click", () => {
+    buildSearchResult();
+  });
+};

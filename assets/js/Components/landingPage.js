@@ -1,5 +1,5 @@
 import { clearApp } from "../Components/app.js";
-import { buildSongDetails } from "./buildSongDetails.js";
+import { buildSongDetails } from "./songs/buildSongDetails.js";
 
 const app = document.getElementById("app");
 const popSongsContainer = document.createElement("div");
@@ -51,17 +51,16 @@ let dummySongNames = [
   "Song Nine",
 ];
 
-export const buildPopularSongs = () => {
+export const buildPopularSongs = async (songs) => {
   clearApp(popSongsContainer);
-
-  dummyArr.map((category) => {
+  dummyArr.forEach((category) => {
     let containerHeader = `<header><h3>${category}</h3></header>`;
     popSongsContainer.innerHTML += containerHeader;
 
     let songsContainer = document.createElement("span");
     songsContainer.classList.add("songs-container");
 
-    dummySongNames.map((song) => {
+    dummySongNames.forEach((song) => {
       let popularSongs = `
             <figure class="popular-song">
                 <img class="song-cards-img" src="./assets/img/ginger-man.jpg" alt="song picture"/>

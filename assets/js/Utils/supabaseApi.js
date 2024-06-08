@@ -1,7 +1,10 @@
+import { receivedAllSongs } from "../Components/songs/receivedSongs.js";
 import { supabase } from "../Utils/supabase/supabaseClient.js";
 
 const getAllSongTitles = async () => {
-  const { data, error } = await supabase.from("songs").select("title");
+  const { data, error } = await supabase
+    .from("songs")
+    .select("id, title, content, created_at, artist(name)");
   if (error) {
     throw new Error(error.message);
   }
@@ -12,7 +15,7 @@ const getAllSongTitles = async () => {
 export const recievedAllSongTitles = async () => {
   try {
     const titles = await getAllSongTitles();
-    console.log(titles);
+    receivedAllSongs(titles);
     return titles;
   } catch (error) {
     console.error(`Error fetching song titles: ${error}`);
