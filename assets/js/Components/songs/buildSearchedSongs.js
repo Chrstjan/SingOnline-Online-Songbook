@@ -1,4 +1,5 @@
 import { clearApp } from "../app.js";
+import { buildArtistView } from "../artists/buildArtistView.js";
 import { buildSongDetails } from "./buildSongDetails.js";
 
 const app = document.getElementById("app");
@@ -31,11 +32,13 @@ export const buildSearchResult = () => {
 
   let searchContainer = `
     <div class="search-container">
+      <span class="search-bar-container">
         <input class="song-search-bar" type="text" placeholder="Search" />
         <header>
             <h4>Songs</h4>
             <p>Search for your favorite songs or discover new</p>
         </header>
+      </span>
     </div>`;
 
   let serachResultContainer = document.createElement("div");
@@ -61,7 +64,7 @@ export const buildSearchResult = () => {
             <figcaption class="star-btn-container">
                 <button class="song-star">&#9733;</button>
                 <span class="album-container">
-                    <img src="./assets/img/ginger-man.jpg" alt="searched song album image" />
+                    <img class="album-image" src="./assets/img/ginger-man.jpg" alt="searched song album image" />
                     <h4>Album Name</h4>
                 </span>
             </figcaption>
@@ -79,5 +82,12 @@ export const buildSearchResult = () => {
     img.addEventListener("click", () => {
       buildSongDetails();
     });
+  });
+
+  const albumImages = document.querySelectorAll(".album-image");
+  albumImages.forEach((album) => {
+    album.addEventListener("click", () => {
+      buildArtistView();
+    })
   });
 };
