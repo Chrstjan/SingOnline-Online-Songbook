@@ -11,24 +11,24 @@ let dummyArtistsArr = [
     name: "Banjo Joe",
   },
   {
-    image: "./assets/img/ginger-man.jpg",
-    name: "Banjo Joe",
+    image: "assets/img/Stolen Images/Telus Music.jpg",
+    name: "Telus Music",
   },
   {
-    image: "./assets/img/ginger-man.jpg",
-    name: "Banjo Joe",
+    image: "assets/img/Stolen Images/Mac-DeMarco.jpg",
+    name: "Mac DeMarco",
   },
   {
-    image: "./assets/img/ginger-man.jpg",
-    name: "Banjo Joe",
+    image: "assets/img/Stolen Images/Tame Impala.png",
+    name: "Tame Impala",
   },
   {
-    image: "./assets/img/ginger-man.jpg",
-    name: "Banjo Joe",
+    image: "assets/img/Stolen Images/Scary Pockets.jpg",
+    name: "Scary Pockets",
   },
   {
-    image: "./assets/img/ginger-man.jpg",
-    name: "Banjo Joe",
+    image: "assets/img/Stolen Images/Måneskin.jpg",
+    name: "Måneskin",
   },
 ];
 

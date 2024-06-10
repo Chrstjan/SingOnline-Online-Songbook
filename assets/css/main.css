@@ -309,6 +309,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-height: 330px;
 }
 @media (min-width: 1300px) {
   .songs-container .popular-song {
@@ -632,6 +633,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 500px;
 }
 .artists-container .artist-container:hover {
   scale: 1.1;

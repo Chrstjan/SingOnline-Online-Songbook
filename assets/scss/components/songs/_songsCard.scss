@@ -13,6 +13,7 @@
 
   .popular-song {
     @include mixins.flexBox(column, center, center);
+    max-height: 330px;
 
     @media (min-width: 1300px) {
       position: relative;
@@ -24,7 +25,6 @@
 
     img {
       width: 20vw;
-
       @media (min-width: 1300px) {
         width: 8vw;
       }
