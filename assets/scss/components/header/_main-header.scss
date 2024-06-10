@@ -1,7 +1,7 @@
-@use "../helpers/variables";
-@use "../helpers/extends";
-@use "../fonts/fonts";
-@use "../helpers/mixins";
+@use "../../helpers/variables";
+@use "../../helpers/extends";
+@use "../../fonts/fonts";
+@use "../../helpers/mixins";
 
 .main-header {
     @include mixins.flexBox(row, space-between, center);
