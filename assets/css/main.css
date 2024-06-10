@@ -49,18 +49,6 @@
   }
 }
 
-@-webkit-keyframes navbarDropdown {
-  0% {
-    top: 70%;
-  }
-  80% {
-    top: 84.9%;
-  }
-  100% {
-    top: 84%;
-  }
-}
-
 @keyframes navbarDropdown {
   0% {
     top: 70%;
@@ -72,14 +60,6 @@
     top: 84%;
   }
 }
-@-webkit-keyframes burgerTop {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(13px) rotate(45deg);
-  }
-}
 @keyframes burgerTop {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -88,28 +68,12 @@
     transform: translateY(13px) rotate(45deg);
   }
 }
-@-webkit-keyframes burgerMiddle {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes burgerMiddle {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-  }
-}
-@-webkit-keyframes burgerBottom {
-  0% {
-    transform: translate(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-13px) rotate(-45deg);
   }
 }
 @keyframes burgerBottom {
@@ -148,8 +112,7 @@
 }
 .main-nav .main-nav-menu.show-menu {
   z-index: 999;
-  -webkit-animation: navbarDropdown 0.3s 1 forwards linear;
-          animation: navbarDropdown 0.3s 1 forwards linear;
+  animation: navbarDropdown 0.3s 1 forwards linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,16 +147,13 @@
   background: #ffffff;
 }
 .main-nav #hamburger .bar.burger-top {
-  -webkit-animation: burgerTop 0.5s 1 forwards ease-in-out;
-          animation: burgerTop 0.5s 1 forwards ease-in-out;
+  animation: burgerTop 0.5s 1 forwards ease-in-out;
 }
 .main-nav #hamburger .bar.burger-middle {
-  -webkit-animation: burgerMiddle 0.5s 1 forwards ease-in-out;
-          animation: burgerMiddle 0.5s 1 forwards ease-in-out;
+  animation: burgerMiddle 0.5s 1 forwards ease-in-out;
 }
 .main-nav #hamburger .bar.burger-bottom {
-  -webkit-animation: burgerBottom 0.5s 1 forwards ease-in-out;
-          animation: burgerBottom 0.5s 1 forwards ease-in-out;
+  animation: burgerBottom 0.5s 1 forwards ease-in-out;
 }
 
 .landing-container {
@@ -410,10 +370,6 @@
   text-align: left;
   font-size: 19px;
 }
-.song-container .search-container .song-search-bar:-ms-input-placeholder {
-  text-align: left;
-  font-size: 19px;
-}
 .song-container .search-container .song-search-bar::placeholder {
   text-align: left;
   font-size: 19px;
@@ -446,6 +402,13 @@
     gap: 0.7rem;
     background: rgba(28, 28, 28, 0.4392156863);
   }
+  .song-container .search-result-container .searched-song header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+  }
 }
 .song-container .search-result-container .searched-song img {
   width: 40vw;
@@ -469,10 +432,20 @@
     font-size: 25px;
   }
 }
+@media (min-width: 1300px) {
+  .song-container .search-result-container .searched-song .star-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 400px;
+    padding: 0rem 0.6rem 0.6rem 0rem;
+  }
+}
 .song-container .search-result-container .searched-song .star-btn-container .song-star {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px !important;
 }
 @media (min-width: 1300px) {
   .song-container .search-result-container .searched-song .star-btn-container .song-star {
@@ -485,13 +458,13 @@
 @media (min-width: 1300px) {
   .song-container .search-result-container .searched-song .star-btn-container .album-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    position: absolute;
-    right: -4vw;
-    bottom: 0;
+  }
+  .song-container .search-result-container .searched-song .star-btn-container .album-container h4 {
+    margin: 0;
+    padding-top: 0.4rem;
   }
   .song-container .search-result-container .searched-song .star-btn-container .album-container img {
     display: block;

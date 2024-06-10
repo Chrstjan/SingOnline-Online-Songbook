@@ -51,10 +51,12 @@ export const buildSearchResult = () => {
   dummySearchResult.map((song) => {
     let searchedSong = `
         <figure class="searched-song">
-            <img class="image-song" src="./assets/img/ginger-man.jpg" alt="searched song image" />
             <header>
-                <h3>${song.song_name}</h3>
-                <h4>${song.artist_name}</h4>
+                <img class="image-song" src="./assets/img/ginger-man.jpg" alt="searched song image" />
+                <hgroup>
+                  <h3>${song.song_name}</h3>
+                  <h4>${song.artist_name}</h4>
+                </hgroup>
             </header>
             <figcaption class="star-btn-container">
                 <button class="song-star">&#9733;</button>

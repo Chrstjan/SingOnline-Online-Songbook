@@ -19,12 +19,14 @@
 
       @media (min-width: 1300px) {
         margin: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        @include mixins.flexBox(row, center, center);
         gap: 0.7rem;
         background: #1c1c1c70;
+
+        header {
+          @include mixins.flexBox(row, center, center);
+          gap: 0.9rem;
+        }
       }
       img {
         width: 40vw;
@@ -55,16 +57,19 @@
 
       .star-btn-container {
         @media (min-width: 1300px) {
-          & {
-            // position: relative;
-          }
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          height: 400px;
+          padding: 0rem 0.6rem 0.6rem 0rem;
         }
 
         .song-star {
           @extend .btn-to-header;
           position: absolute;
           top: 0;
-          right: 0;
+          right: 10px !important; //will not work without !important >:(
 
           @media (min-width: 1300px) {
             right: 7vw;
@@ -75,14 +80,12 @@
           display: none;
 
           @media (min-width: 1300px) {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            position: absolute; //flex would not work
-            right: -4vw;
-            bottom: 0;
+            @include mixins.flexBox(column, center, center);
+
+            h4 {
+              margin: 0;
+              padding-top: 0.4rem;
+            }
 
           & {
             img {
