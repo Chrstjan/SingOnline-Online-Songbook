@@ -25,7 +25,6 @@
 
     .artist-container {
         @include mixins.flexBox(column, center, center);
-        height: 500px;
 
         &:hover {
             scale: 1.1;

@@ -19,10 +19,3 @@
     background-position: $position;
     background-repeat: $repeat;
 }
-
-@mixin positionAbsolute($y, $x, $Yx: 50%, $Xy: 50%) {
-    position: absolute;
-    top: $y;
-    left: $x;
-    transform: translate(-$Yx, -Xy);
-}

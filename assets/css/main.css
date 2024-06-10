@@ -369,14 +369,6 @@
     border-right: 2px solid #ffffff;
   }
 }
-@media (min-width: 1300px) {
-  .song-container .search-container .search-bar-container {
-    position: fixed;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-  }
-}
 .song-container .search-container .song-search-bar {
   border-radius: 9px;
   background: #d9d9d9;
@@ -633,7 +625,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
 }
 .artists-container .artist-container:hover {
   scale: 1.1;
