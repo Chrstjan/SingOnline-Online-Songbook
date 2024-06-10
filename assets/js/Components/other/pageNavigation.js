@@ -1,6 +1,6 @@
-import { buildArtists } from "../buildArtists.js";
+import { buildArtists } from "../artists/buildArtists.js";
 import { buildSearchResult } from "../songs/buildSearchedSongs.js";
-import { buildFeaturedSong, buildPopularSongs } from "../landingPage.js";
+import { buildFeaturedSong, buildPopularSongs } from "../landing/landingPage.js";
 
 export const pageNavigation = () => {
   const headerLogoText = document.getElementById("home");

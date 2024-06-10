@@ -1,5 +1,5 @@
-import { hideNavigation, showNavigation } from "./other/togglePageNavigation.js";
-import { clearApp } from "./app.js";
+import { hideNavigation, showNavigation } from "../other/togglePageNavigation.js";
+import { clearApp } from "../app.js";
 import { buildFeaturedSong, buildPopularSongs } from "./landingPage.js";
 
 const app = document.getElementById("app");

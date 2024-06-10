@@ -1,5 +1,5 @@
 import { recievedAllSongTitles } from "../Utils/supabaseApi.js";
-import { landingView } from "./landing.js";
+import { landingView } from './landing/landing.js';
 import { pageNavigation } from "./other/pageNavigation.js";
 
 export const initPage = () => {

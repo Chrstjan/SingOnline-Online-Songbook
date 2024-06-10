@@ -1,5 +1,5 @@
-import { clearApp } from "../Components/app.js";
-import { buildArtistView } from "../Components/buildArtistView.js";
+import { clearApp } from "../app.js";
+import { buildArtistView } from "./buildArtistView.js";
 
 const app = document.getElementById("app");
 const artistsContainer = document.createElement("div");
