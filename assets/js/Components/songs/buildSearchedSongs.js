@@ -65,7 +65,7 @@ export const buildSearchResult = () => {
                 <button class="song-star">&#9733;</button>
                 <span class="album-container">
                     <img class="album-image" src="./assets/img/ginger-man.jpg" alt="searched song album image" />
-                    <h4>Album Name</h4>
+                    <h4 class="album-name">Album Name</h4>
                 </span>
             </figcaption>
         </figure>`;
@@ -90,4 +90,11 @@ export const buildSearchResult = () => {
       buildArtistView();
     })
   });
+
+  const albumName = document.querySelectorAll(".album-name");
+  albumName.forEach((album) => {
+    album.addEventListener("click", () => {
+      buildArtistView();
+    })
+  })
 };

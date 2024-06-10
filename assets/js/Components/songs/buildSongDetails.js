@@ -25,7 +25,7 @@ export const buildSongDetails = () => {
                 </header>
                 <figcaption class="album-container">
                     <img src="./assets/img/ginger-man.jpg" alt="song album image" />
-                    <h3>Album Name</h3>
+                    <h3 class="album-name">Album Name</h3>
                 </figcaption>
             </figure>
             <div class="song-btns-container">

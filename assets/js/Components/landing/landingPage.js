@@ -5,6 +5,58 @@ const app = document.getElementById("app");
 const popSongsContainer = document.createElement("div");
 popSongsContainer.classList.add("popular-songs-container");
 
+//Only used as dummy data for the map loops in the build code!
+let dummyArr = ["Popular Songs", "Rock", "R&B", "Soul"];
+let stolenSongs = [
+  {
+    img: "assets/img/Stolen Images/Arctic Monkeys.jpg",
+    name: "Do i wanna know?",
+    artist: "Arctic Monkeys"
+  },
+  {
+    img: "assets/img/Stolen Images/Knower.jpg",
+    name: "Overtime",
+    artist: "Knower"
+  },
+  {
+    img: "assets/img/Stolen Images/Mac-DeMarco.jpg",
+    name: "Freaking out the neighborhood",
+    artist: "Mac DeMarco"
+  },
+  {
+    img: "assets/img/Stolen Images/Måneskin.jpg",
+    name: "For your love",
+    artist: "Måneskin"
+  },
+  {
+    img: "assets/img/Stolen Images/Mina Okabe.png",
+    name: "Every Second",
+    artist: "Mina Okabe"
+  },
+  {
+    img: "assets/img/Stolen Images/popmlamoose.jpg",
+    name: "Tainted Love",
+    artist: "Pomplamoose"
+  },
+  {
+    img: "assets/img/Stolen Images/Scary Pockets.jpg",
+    name: "American Boy",
+    artist: "Scary Pockets"
+  },
+  {
+    img: "assets/img/Stolen Images/Tame Impala.png",
+    name: "Borderline",
+    artist: "Tame Impala"
+  },
+  {
+    img: "assets/img/Stolen Images/Telus Music.jpg",
+    name: "Apart",
+    artist: "Telus Music"
+  }
+]
+
+let randFeaturedSong = Math.floor(Math.random() * stolenSongs.length);
+
 export const buildFeaturedSong = () => {
   clearApp(app);
 
@@ -37,21 +89,7 @@ export const buildFeaturedSong = () => {
   });
 };
 
-//Only used as dummy data for the map loops in the build code!
-let dummyArr = ["Popular Songs", "Rock", "R&B", "Soul"];
-let dummySongNames = [
-  "Song One",
-  "Song Two",
-  "Song Three",
-  "Song Four",
-  "Song Five",
-  "Song Six",
-  "Song Seven",
-  "Song Eight",
-  "Song Nine",
-];
-
-export const buildPopularSongs = async (songs) => {
+export const buildPopularSongs = async (featuredSong, songs) => {
   clearApp(popSongsContainer);
   dummyArr.forEach((category) => {
     let containerHeader = `<header><h3>${category}</h3></header>`;
@@ -60,13 +98,13 @@ export const buildPopularSongs = async (songs) => {
     let songsContainer = document.createElement("span");
     songsContainer.classList.add("songs-container");
 
-    dummySongNames.forEach((song) => {
+    stolenSongs.forEach((song) => {
       let popularSongs = `
             <figure class="popular-song">
-                <img class="song-cards-img" src="./assets/img/ginger-man.jpg" alt="song picture"/>
+                <img class="song-cards-img" src="${song.img}" alt="song picture"/>
                 <header>
-                    <h3>${song}</h3>
-                    <h4>Song Artist</h4>
+                    <h3>${song.name}</h3>
+                    <h4>${song.artist}</h4>
                 </header>
                 <figcaption class="song-list-btn-container">
                     <button class="song-star">&#9733;</button>
